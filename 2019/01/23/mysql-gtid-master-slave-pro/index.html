@@ -288,7 +288,7 @@
 
     
 
-    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
+    <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
 
   </li>
 
@@ -500,7 +500,7 @@
 <h3 id="slave配置"><a href="#slave配置" class="headerlink" title="slave配置"></a>slave配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 设置server_id，注意要唯一</span><br><span class="line">server_id=101</span><br><span class="line">log-bin = mysql-bin</span><br><span class="line">binlog_format = row</span><br><span class="line">log-slave-updates = 1</span><br><span class="line">gtid_mode = on</span><br><span class="line">enforce_gtid_consistency = on</span><br><span class="line">skip_slave_start=1</span><br><span class="line"># 从库设置为只读</span><br><span class="line">read_only=on</span><br></pre></td></tr></table></figure>
 <h2 id="重启数据库"><a href="#重启数据库" class="headerlink" title="重启数据库"></a>重启数据库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure>
 <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户从库同步</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,RELOAD,<span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>,<span class="keyword">LOCK</span> <span class="keyword">TABLES</span>,<span class="keyword">EVENT</span>,<span class="keyword">REPLICATION</span> <span class="keyword">CLIENT</span>  <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'repl_user'</span>@<span class="string">'192.168.111.64'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'123456'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建只读用户，用户从库读取数据</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">Select</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'reader'</span>@<span class="string">'192.168.111.%'</span>  <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">"123456"</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在192.169.111.66上操作</span><br><span class="line">nohup mysqldump --single-transaction --master-data=2 --triggers --routines --all-databases --events -h192.168.111.64 -u'root' -p'password' &gt; /home/backup.sql &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在192.169.111.66上操作</span></span><br><span class="line">nohup mysqldump --single-transaction --master-data=2 --triggers --routines --all-databases --events -h192.168.111.64 -u'root' -p'password' &gt; /home/backup.sql &amp;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>因为数据量较大(导出大概30G)，使用<code>nohup [commend] &amp;</code>  使用后台导出，防止导出时间过长连接断开，可以使用<code>jobs -l</code>命令查看</p>
 </blockquote>
@@ -510,7 +510,7 @@
 <h2 id="从库数据导入"><a href="#从库数据导入" class="headerlink" title="从库数据导入"></a>从库数据导入</h2><h3 id="连接mysql导入"><a href="#连接mysql导入" class="headerlink" title="连接mysql导入"></a>连接mysql导入</h3><ul>
 <li>登陆mysql</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 连接到数据库</span><br><span class="line">mysql -uroot -p'123456';</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 连接到数据库</span></span><br><span class="line">mysql -uroot -p'123456';</span><br></pre></td></tr></table></figure>
 <ul>
 <li>执行导入sql命令</li>
 </ul>
