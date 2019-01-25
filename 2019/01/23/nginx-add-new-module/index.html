@@ -278,6 +278,23 @@
         
         
           
+          <li class="menu-item menu-item-comments">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/comments/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>留言</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-commonweal">
 
     
@@ -374,6 +391,8 @@
         
 
         <div class="post-meta">
+		
+			
           <span class="post-time">
 
             
@@ -506,9 +525,9 @@
 <li><a href="https://github.com/openresty/headers-more-nginx-module/tags" target="_blank" rel="noopener"><i class="fa fa-link"></i>headers-more-nginx-module下载地址</a></li>
 <li><a href="http://nginx.org/" target="_blank" rel="noopener"><i class="fa fa-link"></i>nginx下载地址</a></li>
 </ul>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 举例目录/app/tools</span><br><span class="line">cd /app/tools/</span><br><span class="line"><span class="meta">#</span>下载插件</span><br><span class="line">wget https://github.com/openresty/headers-more-nginx-module/archive/v0.33.tar.gz</span><br><span class="line"><span class="meta">#</span>解压</span><br><span class="line">tar -zxvf v0.33.tar.gz</span><br></pre></td></tr></table></figure>
-<h2 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 查看安装参数命令(取出：configure arguments:)</span><br><span class="line">/app/nginx/sbin/nginx -V</span><br><span class="line"><span class="meta">#</span> 在nginx资源目录编译</span><br><span class="line">cd /app/nginx-1.12.2/</span><br><span class="line"><span class="meta">#</span> 将上面取出的configure arguments后面追加 --add-module=/app/tools/headers-more-nginx-module-0.33</span><br><span class="line">./configure --prefix=/app/nginx112 --add-module=/app/tools/headers-more-nginx-module-0.33</span><br><span class="line"><span class="meta">#</span> 编辑，切记没有make install</span><br><span class="line">make</span><br><span class="line"><span class="meta">#</span> 备份</span><br><span class="line">cp /app/nginx112/sbin/nginx /app/nginx112/sbin/nginx.bak </span><br><span class="line"><span class="meta">#</span> 覆盖(覆盖提示输入y)</span><br><span class="line">cp -f /app/nginx-1.12.2/objs/nginx /app/nginx112/sbin/nginx</span><br></pre></td></tr></table></figure>
-<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /app/nginx112/conf/nginx.conf</span><br><span class="line"><span class="meta">#</span> 添加配置(在http模块)</span><br><span class="line">more_clear_headers 'Server';</span><br></pre></td></tr></table></figure>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 举例目录/app/tools</span></span><br><span class="line">cd /app/tools/</span><br><span class="line"><span class="meta">#</span><span class="bash">下载插件</span></span><br><span class="line">wget https://github.com/openresty/headers-more-nginx-module/archive/v0.33.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line">tar -zxvf v0.33.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看安装参数命令(取出：configure arguments:)</span></span><br><span class="line">/app/nginx/sbin/nginx -V</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在nginx资源目录编译</span></span><br><span class="line">cd /app/nginx-1.12.2/</span><br><span class="line"><span class="meta">#</span><span class="bash"> 将上面取出的configure arguments后面追加 --add-module=/app/tools/headers-more-nginx-module-0.33</span></span><br><span class="line">./configure --prefix=/app/nginx112 --add-module=/app/tools/headers-more-nginx-module-0.33</span><br><span class="line"><span class="meta">#</span><span class="bash"> 编辑，切记没有make install</span></span><br><span class="line">make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 备份</span></span><br><span class="line">cp /app/nginx112/sbin/nginx /app/nginx112/sbin/nginx.bak </span><br><span class="line"><span class="meta">#</span><span class="bash"> 覆盖(覆盖提示输入y)</span></span><br><span class="line">cp -f /app/nginx-1.12.2/objs/nginx /app/nginx112/sbin/nginx</span><br></pre></td></tr></table></figure>
+<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /app/nginx112/conf/nginx.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加配置(在http模块)</span></span><br><span class="line">more_clear_headers 'Server';</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>上面配置只是将http响应头中的Server:nginx/1.12.2清楚，详细使用方案可阅读<a href="https://github.com/openresty/headers-more-nginx-module" target="_blank" rel="noopener">参考文档</a>,<br>支持添加·修改·清除响应头的操作，</p>
 </blockquote>
@@ -557,6 +576,18 @@
       
 
       
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
       
       
 
@@ -650,7 +681,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -807,7 +838,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">9 分钟</span>
   
 </div>
 
@@ -988,6 +1019,25 @@
   
 
   
+  <script>
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 16268,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  </script>
+
 
   
 
@@ -1001,6 +1051,83 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
 
   
 

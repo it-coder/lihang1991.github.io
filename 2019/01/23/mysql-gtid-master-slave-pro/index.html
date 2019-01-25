@@ -278,6 +278,23 @@
         
         
           
+          <li class="menu-item menu-item-comments">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/comments/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>留言</a>
+
+  </li>
+        
+        
+        
+          
           <li class="menu-item menu-item-commonweal">
 
     
@@ -374,6 +391,8 @@
         
 
         <div class="post-meta">
+		
+			
           <span class="post-time">
 
             
@@ -500,7 +519,7 @@
 <h3 id="slave配置"><a href="#slave配置" class="headerlink" title="slave配置"></a>slave配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 设置server_id，注意要唯一</span><br><span class="line">server_id=101</span><br><span class="line">log-bin = mysql-bin</span><br><span class="line">binlog_format = row</span><br><span class="line">log-slave-updates = 1</span><br><span class="line">gtid_mode = on</span><br><span class="line">enforce_gtid_consistency = on</span><br><span class="line">skip_slave_start=1</span><br><span class="line"># 从库设置为只读</span><br><span class="line">read_only=on</span><br></pre></td></tr></table></figure>
 <h2 id="重启数据库"><a href="#重启数据库" class="headerlink" title="重启数据库"></a>重启数据库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></table></figure>
 <h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户从库同步</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,RELOAD,<span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>,<span class="keyword">LOCK</span> <span class="keyword">TABLES</span>,<span class="keyword">EVENT</span>,<span class="keyword">REPLICATION</span> <span class="keyword">CLIENT</span>  <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'repl_user'</span>@<span class="string">'192.168.111.64'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'123456'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建只读用户，用户从库读取数据</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">Select</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'reader'</span>@<span class="string">'192.168.111.%'</span>  <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">"123456"</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在192.169.111.66上操作</span><br><span class="line">nohup mysqldump --single-transaction --master-data=2 --triggers --routines --all-databases --events -h192.168.111.64 -u'root' -p'password' &gt; /home/backup.sql &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在192.169.111.66上操作</span></span><br><span class="line">nohup mysqldump --single-transaction --master-data=2 --triggers --routines --all-databases --events -h192.168.111.64 -u'root' -p'password' &gt; /home/backup.sql &amp;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>因为数据量较大(导出大概30G)，使用<code>nohup [commend] &amp;</code>  使用后台导出，防止导出时间过长连接断开，可以使用<code>jobs -l</code>命令查看</p>
 </blockquote>
@@ -510,7 +529,7 @@
 <h2 id="从库数据导入"><a href="#从库数据导入" class="headerlink" title="从库数据导入"></a>从库数据导入</h2><h3 id="连接mysql导入"><a href="#连接mysql导入" class="headerlink" title="连接mysql导入"></a>连接mysql导入</h3><ul>
 <li>登陆mysql</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 连接到数据库</span><br><span class="line">mysql -uroot -p'123456';</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 连接到数据库</span></span><br><span class="line">mysql -uroot -p'123456';</span><br></pre></td></tr></table></figure>
 <ul>
 <li>执行导入sql命令</li>
 </ul>
@@ -577,6 +596,18 @@
 
       
       
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
       
 
       
@@ -592,6 +623,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/25/example/" rel="prev" title="一些特殊用法">
+                一些特殊用法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -665,7 +700,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -822,7 +857,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">8 分钟</span>
+    <span title="站点阅读时长">9 分钟</span>
   
 </div>
 
@@ -1003,6 +1038,25 @@
   
 
   
+  <script>
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 16268,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  </script>
+
 
   
 
@@ -1016,6 +1070,83 @@
   
 
   
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var range = document.createRange(); //For Chrome
+        var sel = window.getSelection(); //For Chrome
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; //Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.value = code;
+        ta.textContent = code; //For FireFox
+        ta.contentEditable = true;
+        ta.readOnly = false;
+        document.body.appendChild(ta);
+        range.selectNode(ta);
+        sel.removeAllRanges();
+        sel.addRange(range);
+        ta.setSelectionRange(0, code.length);
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); //For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
 
   
 
