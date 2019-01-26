@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<html><head></head><body><h2 id="代码块带目录"><a href="#代码块带目录" class="headerlink" title="代码块带目录"></a>代码块带目录</h2><figure class="highlight java"><figcaption><span>custom.java</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> </span>{</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><a id="more"></a><h2 id="tag"><a href="#tag" class="headerlink" title="tag"></a>tag</h2><blockquote><ul><li>danger</li><li>default</li><li>primary</li><li>info</li><li>success</li><li>warning</li><li>danger</li><li>[option] [no-icon]</li></ul></blockquote><div class="note danger">            <meta name="generator" content="Hexo 3.8.0"><p>note text<br>note text<br>note text</p>          </div><div class="note default">            <meta name="generator" content="Hexo 3.8.0"><p>note text<br>note text<br>note text</p>          </div><h2 id="tabs"><a href="#tabs" class="headerlink" title="tabs"></a>tabs</h2><div class="tabs" id="first-unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#first-unique-name-1">First unique name 1</a></li><li class="tab"><a href="#first-unique-name-2">First unique name 2</a></li><li class="tab"><a href="#first-unique-name-3">First unique name 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><meta name="generator" content="Hexo 3.8.0"><p><strong>This is Tab 1.</strong></p></div><div class="tab-pane" id="first-unique-name-2"><meta name="generator" content="Hexo 3.8.0"><p><strong>This is Tab 2.</strong></p></div><div class="tab-pane" id="first-unique-name-3"><meta name="generator" content="Hexo 3.8.0"><p><strong>This is Tab 3.</strong></p></div></div></div><hr></body></html>]]></content>
       
       
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
       
     </entry>
     
