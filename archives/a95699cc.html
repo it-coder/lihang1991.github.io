@@ -81,25 +81,25 @@
 
 
 </head><body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <meta name="description" content="前期准备工作 安装git 安装node  本地初始化hexo1234567# 全局安装hexo脚手架npm install hexo-cli -g# 当前目录创建myblog,并在myblog下初始化hexohexo init myblogcd myblog# 安装依赖npm install">
-<meta name="keywords" content="blog,hexo,github">
+  <meta name="description" content="环境 mysql-5.7.19 Centos7 master: 192.168.111.64 slave: 192.168.111.66  主从配置master配置12345678## GTIDserver_id = 100  # 服务器id，从库最好大于主库,注意要唯一gtid_mode = on    #开启gtid模式enforce_gtid_consistency = on    #强制g">
+<meta name="keywords" content="mysql,gtid">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github pages和hexo博客搭建">
-<meta property="og:url" content="http://yoursite.com/2018/12/28/github-pages和hexo博客搭建/index.html">
+<meta property="og:title" content="mysql gtid读写分离主从同步生产环境实战">
+<meta property="og:url" content="http://yoursite.com/archives/a95699cc.html">
 <meta property="og:site_name" content="李杭">
-<meta property="og:description" content="前期准备工作 安装git 安装node  本地初始化hexo1234567# 全局安装hexo脚手架npm install hexo-cli -g# 当前目录创建myblog,并在myblog下初始化hexohexo init myblogcd myblog# 安装依赖npm install">
+<meta property="og:description" content="环境 mysql-5.7.19 Centos7 master: 192.168.111.64 slave: 192.168.111.66  主从配置master配置12345678## GTIDserver_id = 100  # 服务器id，从库最好大于主库,注意要唯一gtid_mode = on    #开启gtid模式enforce_gtid_consistency = on    #强制g">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-22T11:34:35.469Z">
+<meta property="og:updated_time" content="2019-01-26T03:40:32.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github pages和hexo博客搭建">
-<meta name="twitter:description" content="前期准备工作 安装git 安装node  本地初始化hexo1234567# 全局安装hexo脚手架npm install hexo-cli -g# 当前目录创建myblog,并在myblog下初始化hexohexo init myblogcd myblog# 安装依赖npm install">
+<meta name="twitter:title" content="mysql gtid读写分离主从同步生产环境实战">
+<meta name="twitter:description" content="环境 mysql-5.7.19 Centos7 master: 192.168.111.64 slave: 192.168.111.66  主从配置master配置12345678## GTIDserver_id = 100  # 服务器id，从库最好大于主库,注意要唯一gtid_mode = on    #开启gtid模式enforce_gtid_consistency = on    #强制g">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/28/github-pages和hexo博客搭建/">
+  <link rel="canonical" href="http://yoursite.com/archives/a95699cc.html">
 
 
 
@@ -109,7 +109,7 @@
   };
 </script>
 
-  <title>github pages和hexo博客搭建 | 李杭</title>
+  <title>mysql gtid读写分离主从同步生产环境实战 | 李杭</title>
   
 
 
@@ -204,6 +204,8 @@
     
 
     
+      
+    
 
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
@@ -221,8 +223,10 @@
     
 
     
+      
+    
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">9</span></a>
 
   </li>
         
@@ -238,15 +242,17 @@
     
 
     
+      
+    
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">3</span></a>
 
   </li>
         
         
         
           
-          <li class="menu-item menu-item-archives">
+          <li class="menu-item menu-item-archives menu-item-active">
 
     
     
@@ -255,8 +261,10 @@
     
 
     
+      
+    
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">5</span></a>
 
   </li>
         
@@ -271,6 +279,8 @@
       
     
 
+    
+      
     
 
     <a href="/comments/" rel="section"><i class="menu-item-icon fa fa-fw fa-comments"></i> <br>留言</a>
@@ -288,6 +298,8 @@
       
     
 
+    
+      
     
 
     <a href="/404.html" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>公益 404</a>
@@ -343,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/github-pages和hexo博客搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/archives/a95699cc.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lihang">
@@ -360,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">github pages和hexo博客搭建
+          <h2 class="post-title" itemprop="name headline">mysql gtid读写分离主从同步生产环境实战
 
               
             
@@ -388,7 +400,7 @@
                 
               
 
-              <time title="创建时间：2018-12-28 12:11:14" itemprop="dateCreated datePublished" datetime="2018-12-28T12:11:14+08:00">2018-12-28</time>
+              <time title="创建时间：2019-01-23 18:46:40" itemprop="dateCreated datePublished" datetime="2019-01-23T18:46:40+08:00">2019-01-23</time>
             
 
             
@@ -405,7 +417,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-22 19:34:35" itemprop="dateModified" datetime="2019-01-22T19:34:35+08:00">2019-01-22</time>
+                <time title="修改时间：2019-01-26 11:40:32" itemprop="dateModified" datetime="2019-01-26T11:40:32+08:00">2019-01-26</time>
               
             
           </span>
@@ -422,7 +434,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
 
                 
                 
@@ -440,8 +452,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/2018/12/28/github-pages和hexo博客搭建/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/28/github-pages和hexo博客搭建/" itemprop="commentCount"></span>
+                <a href="/archives/a95699cc.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/archives/a95699cc.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -463,7 +475,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1k</span>
+                <span title="本文字数">1.7k</span>
               
 
               
@@ -477,7 +489,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 ≈</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -497,72 +509,53 @@
       
 
       
-        <meta name="generator" content="Hexo 3.8.0"><h3 id="前期准备工作"><a href="#前期准备工作" class="headerlink" title="前期准备工作"></a>前期准备工作</h3><ul>
-<li>安装<span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9kb3dubG9hZHM=" title="https://git-scm.com/downloads">git<i class="fa fa-external-link"></i></span></li>
-<li>安装<span class="exturl" data-url="aHR0cDovL25vZGVqcy5jbi8=" title="http://nodejs.cn/">node<i class="fa fa-external-link"></i></span></li>
+        <meta name="generator" content="Hexo 3.8.0"><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>mysql-5.7.19</li>
+<li>Centos7</li>
+<li>master: 192.168.111.64</li>
+<li>slave: 192.168.111.66</li>
 </ul>
-<h3 id="本地初始化hexo"><a href="#本地初始化hexo" class="headerlink" title="本地初始化hexo"></a>本地初始化hexo</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局安装hexo脚手架</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="comment"># 当前目录创建myblog,并在myblog下初始化hexo</span></span><br><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="主从配置"><a href="#主从配置" class="headerlink" title="主从配置"></a>主从配置</h2><h3 id="master配置"><a href="#master配置" class="headerlink" title="master配置"></a>master配置</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## GTID</span><br><span class="line">server_id = 100  # 服务器id，从库最好大于主库,注意要唯一</span><br><span class="line">gtid_mode = on    #开启gtid模式</span><br><span class="line">enforce_gtid_consistency = on    #强制gtid一致性，开启后对特定的create table不被支持</span><br><span class="line">log-bin = mysql-bin    #开启二进制日志</span><br><span class="line">binlog_format = row    #默认为mixed混合模式，更改成row复制，为了数据一致性</span><br><span class="line">log-slave-updates = 1    #从库binlog才会记录主库同步的操作日志</span><br><span class="line">skip_slave_start=1    #跳过slave复制线程</span><br></pre></td></tr></tbody></table></figure>
 <a id="more"></a>
-<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hexo g</td>
-<td>编译(hexo generate)</td>
-</tr>
-<tr>
-<td>hexo s</td>
-<td>启动hexo本地服务(hexo server)</td>
-</tr>
-<tr>
-<td>hexo d</td>
-<td>上传(hexo deploy),前提是配置好git弟子</td>
-</tr>
-<tr>
-<td>hexo n ‘page’</td>
-<td>新建页面(hexo new ‘’或者hexo new page ‘’)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="github项目准备"><a href="#github项目准备" class="headerlink" title="github项目准备"></a>github项目准备</h3><ul>
-<li><p>新建项目,项目名称<code>[github name].github.io</code></p>
+<h3 id="slave配置"><a href="#slave配置" class="headerlink" title="slave配置"></a>slave配置</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 设置server_id，注意要唯一</span><br><span class="line">server_id=101</span><br><span class="line">log-bin = mysql-bin</span><br><span class="line">binlog_format = row</span><br><span class="line">log-slave-updates = 1</span><br><span class="line">gtid_mode = on</span><br><span class="line">enforce_gtid_consistency = on</span><br><span class="line">skip_slave_start=1</span><br><span class="line"># 从库设置为只读</span><br><span class="line">read_only=on</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="重启数据库"><a href="#重启数据库" class="headerlink" title="重启数据库"></a>重启数据库</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户从库同步</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,RELOAD,<span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>,<span class="keyword">LOCK</span> <span class="keyword">TABLES</span>,<span class="keyword">EVENT</span>,<span class="keyword">REPLICATION</span> <span class="keyword">CLIENT</span>  <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'repl_user'</span>@<span class="string">'192.168.111.64'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'123456'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建只读用户，用户从库读取数据</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">Select</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'reader'</span>@<span class="string">'192.168.111.%'</span>  <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">"123456"</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在192.169.111.66上操作</span></span><br><span class="line">nohup mysqldump --single-transaction --master-data=2 --triggers --routines --all-databases --events -h192.168.111.64 -u'root' -p'password' > /home/backup.sql &</span><br></pre></td></tr></tbody></table></figure>
 <blockquote>
-<p>没有github的先去注册<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29t" title="https://github.com">github<i class="fa fa-external-link"></i></span>账号</p>
+<p>因为数据量较大(导出大概30G)，使用<code>nohup [commend] &</code>  使用后台导出，防止导出时间过长连接断开，可以使用<code>jobs -l</code>命令查看</p>
 </blockquote>
-</li>
-<li><p>创建完成后，复制该项目的git地址</p>
 <blockquote>
-<p><span class="exturl" data-url="bWFpbHRvOmdpdEBnaXRodWIuY29t" title="mailto:git@github.com">git@github.com<i class="fa fa-external-link"></i></span>:it-daily/it-daily.github.io.git</p>
+<p>数据导出也可以直接在主库服务器上导出，然后通过<code>scp backup.sql 192.168.111.66:/home</code>命令传到从库服务器</p>
 </blockquote>
-</li>
-<li><p>将git地址复制到hexo的_config.yml</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:it-daily/it-daily.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>生成SSH key</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查当前用户.ssh下是否存在id_rsa和id_rsa.pub这两个文件,不存在生成</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 一路回车，在用户主目录里找到.ssh目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>登陆 GitHub设置ssh key</p>
-<blockquote>
-<p>打开“Account settings”，“SSH Keys”页面，点“Add SSH Key”，填上任意 Title，在 Key 文本框里粘贴id_rsa.pub文件的内容</p>
-</blockquote>
-</li>
-<li><p>生成博客的静态文件</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>安装hexo git插件</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>上传静态文件到GitHub</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></tbody></table></figure>
-</li>
+<h2 id="从库数据导入"><a href="#从库数据导入" class="headerlink" title="从库数据导入"></a>从库数据导入</h2><h3 id="连接mysql导入"><a href="#连接mysql导入" class="headerlink" title="连接mysql导入"></a>连接mysql导入</h3><ul>
+<li>登陆mysql</li>
 </ul>
-<h3 id="博客maupassant主题"><a href="#博客maupassant主题" class="headerlink" title="博客maupassant主题"></a>博客maupassant主题</h3><p>请参照<span class="exturl" data-url="aHR0cHM6Ly93d3cuaGFvbXdlaS5jb20vdGVjaG5vbG9neS9tYXVwYXNzYW50LWhleG8uaHRtbA==" title="https://www.haomwei.com/technology/maupassant-hexo.html">maupassant<i class="fa fa-external-link"></i></span></p>
-
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 连接到数据库</span></span><br><span class="line">mysql -uroot -p'123456';</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>执行导入sql命令</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /home/backup.sql</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="命令直接导入"><a href="#命令直接导入" class="headerlink" title="命令直接导入"></a>命令直接导入</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup mysql -uroot -p’123456’ < /home/backup.sql &</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>推荐第二种方式，尤其是数据量较大的情况下</p>
+</blockquote>
+<h2 id="在192-168-111-66上设置主从连接"><a href="#在192-168-111-66上设置主从连接" class="headerlink" title="在192.168.111.66上设置主从连接"></a>在192.168.111.66上设置主从连接</h2><ul>
+<li>连接mysql</li>
+</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p'123456'</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>设置</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置</span></span><br><span class="line"><span class="keyword">CHANGE</span> <span class="keyword">MASTER</span> <span class="keyword">TO</span> MASTER_HOST=<span class="string">'192.168.111.64'</span>, MASTER_PORT=<span class="number">3306</span>,MASTER_USER=<span class="string">'repl_user'</span>,MASTER_PASSWORD=<span class="string">'123456'</span>,MASTER_AUTO_POSITION=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启主从</span></span><br><span class="line"><span class="keyword">start</span> <span class="keyword">slave</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看主从状态</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">slave</span> <span class="keyword">status</span> \G;</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>常用命令:</p>
+<ul>
+<li>停止同步:<code>stop slave</code></li>
+<li>重置从库状态:<code>reset slave</code></li>
+<li>重置主库状态:<code>reset master</code></li>
+</ul>
+</blockquote>
+<hr>
       
     </div>
 
@@ -595,11 +588,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag"># blog</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
-          
-            <a href="/tags/github/" rel="tag"># github</a>
+            <a href="/tags/gtid/" rel="tag"># gtid</a>
           
         </div>
       
@@ -624,14 +615,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/archives/15b18a2.html" rel="next" title="nginx添加新模块以及自定义http响应头">
+                <i class="fa fa-chevron-left"></i> nginx添加新模块以及自定义http响应头
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/28/mysql三种安装方式之-rpm方式安装/" rel="prev" title="mysql三种安装方式之-rpm方式安装">
-                mysql三种安装方式之-rpm方式安装 <i class="fa fa-chevron-right"></i>
+              <a href="/archives/4e463d48.html" rel="prev" title="一些特殊用法">
+                一些特殊用法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -818,7 +813,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期准备工作"><span class="nav-number">1.</span> <span class="nav-text">前期准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地初始化hexo"><span class="nav-number">2.</span> <span class="nav-text">本地初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo常用命令"><span class="nav-number">3.</span> <span class="nav-text">hexo常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github项目准备"><span class="nav-number">4.</span> <span class="nav-text">github项目准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客maupassant主题"><span class="nav-number">5.</span> <span class="nav-text">博客maupassant主题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主从配置"><span class="nav-number">2.</span> <span class="nav-text">主从配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#master配置"><span class="nav-number">2.1.</span> <span class="nav-text">master配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slave配置"><span class="nav-number">2.2.</span> <span class="nav-text">slave配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启数据库"><span class="nav-number">3.</span> <span class="nav-text">重启数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">4.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据导出"><span class="nav-number">5.</span> <span class="nav-text">数据导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从库数据导入"><span class="nav-number">6.</span> <span class="nav-text">从库数据导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#连接mysql导入"><span class="nav-number">6.1.</span> <span class="nav-text">连接mysql导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令直接导入"><span class="nav-number">6.2.</span> <span class="nav-text">命令直接导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在192-168-111-66上设置主从连接"><span class="nav-number">7.</span> <span class="nav-text">在192.168.111.66上设置主从连接</span></a></li></ol></div>
             
 
           </div>

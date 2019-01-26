@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/comments/index.html</loc>
+    <loc>http://yoursite.com/archives/15b18a2.html</loc>
     
-    <lastmod>2019-01-25T07:49:53.906Z</lastmod>
+    <lastmod>2019-01-26T03:40:32.883Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2019/01/25/example/</loc>
+    <loc>http://yoursite.com/archives/dceaf414.html</loc>
     
-    <lastmod>2019-01-25T07:03:03.730Z</lastmod>
+    <lastmod>2019-01-26T03:40:32.882Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/archives/a95699cc.html</loc>
+    
+    <lastmod>2019-01-26T03:40:32.881Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/archives/869e96f6.html</loc>
+    
+    <lastmod>2019-01-26T03:40:32.879Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/archives/4e463d48.html</loc>
+    
+    <lastmod>2019-01-26T03:40:32.877Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/comments/index.html</loc>
+    
+    <lastmod>2019-01-25T07:49:53.906Z</lastmod>
     
   </url>
   
@@ -26,34 +54,6 @@
     <loc>http://yoursite.com/404.html</loc>
     
     <lastmod>2019-01-23T12:04:55.860Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/23/nginx-add-new-module/</loc>
-    
-    <lastmod>2019-01-23T11:09:40.447Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2019/01/23/mysql-gtid-master-slave-pro/</loc>
-    
-    <lastmod>2019-01-23T11:09:02.155Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/12/28/mysql%E4%B8%89%E7%A7%8D%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%B9%8B-rpm%E6%96%B9%E5%BC%8F%E5%AE%89%E8%A3%85/</loc>
-    
-    <lastmod>2019-01-23T02:29:57.257Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/12/28/github-pages%E5%92%8Chexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    
-    <lastmod>2019-01-22T11:34:35.469Z</lastmod>
     
   </url>
   
