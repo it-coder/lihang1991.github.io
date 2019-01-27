@@ -5,7 +5,7 @@ Allow: /archives/
 Allow: /tags/
 Allow: /about/
 Allow: /categories/
-Allow: /archives/
+Allow: /post/
 Allow: /comments/
 
 Disallow: /vendors/

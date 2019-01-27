@@ -81,25 +81,25 @@
 
 
 </head><body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <meta name="description" content="mysql添加新模块方案">
-<meta name="keywords" content="linux, nginx, headers-more-nginx-module">
+  <meta name="description" content="hexo搭建github博客">
+<meta name="keywords" content="github, hexo, 博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx添加新模块以及自定义http响应头">
-<meta property="og:url" content="http://yoursite.com/archives/15b18a2.html">
+<meta property="og:title" content="github pages和hexo博客搭建">
+<meta property="og:url" content="http://yoursite.com/post/869e96f6.html">
 <meta property="og:site_name" content="李杭">
-<meta property="og:description" content="mysql添加新模块方案">
+<meta property="og:description" content="hexo搭建github博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-26T04:12:10.628Z">
+<meta property="og:updated_time" content="2019-01-26T04:09:17.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx添加新模块以及自定义http响应头">
-<meta name="twitter:description" content="mysql添加新模块方案">
+<meta name="twitter:title" content="github pages和hexo博客搭建">
+<meta name="twitter:description" content="hexo搭建github博客">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/15b18a2.html">
+  <link rel="canonical" href="http://yoursite.com/post/869e96f6.html">
 
 
 
@@ -109,7 +109,7 @@
   };
 </script>
 
-  <title>nginx添加新模块以及自定义http响应头 | 李杭</title>
+  <title>github pages和hexo博客搭建 | 李杭</title>
   
 
 
@@ -252,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/archives/15b18a2.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/869e96f6.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lihang">
@@ -372,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">nginx添加新模块以及自定义http响应头
+          <h2 class="post-title" itemprop="name headline">github pages和hexo博客搭建
 
               
             
@@ -400,7 +400,7 @@
                 
               
 
-              <time title="创建时间：2019-01-23 18:24:38" itemprop="dateCreated datePublished" datetime="2019-01-23T18:24:38+08:00">2019-01-23</time>
+              <time title="创建时间：2018-12-28 12:11:14" itemprop="dateCreated datePublished" datetime="2018-12-28T12:11:14+08:00">2018-12-28</time>
             
 
             
@@ -417,7 +417,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-26 12:12:10" itemprop="dateModified" datetime="2019-01-26T12:12:10+08:00">2019-01-26</time>
+                <time title="修改时间：2019-01-26 12:09:17" itemprop="dateModified" datetime="2019-01-26T12:09:17+08:00">2019-01-26</time>
               
             
           </span>
@@ -434,7 +434,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
 
                 
                 
@@ -452,8 +452,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/archives/15b18a2.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/archives/15b18a2.html" itemprop="commentCount"></span>
+                <a href="/post/869e96f6.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/post/869e96f6.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -475,7 +475,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.1k</span>
+                <span title="本文字数">1k</span>
               
 
               
@@ -495,7 +495,7 @@
           
 
           
-            <div class="post-description">mysql添加新模块方案</div>
+            <div class="post-description">hexo搭建github博客</div>
           
 
         </div>
@@ -511,34 +511,72 @@
       
 
       
-        <meta name="generator" content="Hexo 3.8.0"><h2 id="需求场景"><a href="#需求场景" class="headerlink" title="需求场景"></a>需求场景</h2><p>编译好的nginx需要添加headers-more-nginx-module模块来自定义响应头</p>
-<blockquote>
-<p>nginx其它模块同样适用</p>
-</blockquote>
-<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>nginx包目录:/app/nginx-1.12.2</li>
-<li>nginx安装目录:/app/nginx112</li>
-<li>插件目录:/app/tools/headers-more-nginx-module-0.33</li>
-<li>系统环境centOs7</li>
+        <meta name="generator" content="Hexo 3.8.0"><h3 id="前期准备工作"><a href="#前期准备工作" class="headerlink" title="前期准备工作"></a>前期准备工作</h3><ul>
+<li>安装<span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9kb3dubG9hZHM=" title="https://git-scm.com/downloads">git<i class="fa fa-external-link"></i></span></li>
+<li>安装<span class="exturl" data-url="aHR0cDovL25vZGVqcy5jbi8=" title="http://nodejs.cn/">node<i class="fa fa-external-link"></i></span></li>
 </ul>
+<h3 id="本地初始化hexo"><a href="#本地初始化hexo" class="headerlink" title="本地初始化hexo"></a>本地初始化hexo</h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全局安装hexo脚手架</span></span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"><span class="comment"># 当前目录创建myblog,并在myblog下初始化hexo</span></span><br><span class="line">hexo init myblog</span><br><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line"><span class="comment"># 安装依赖</span></span><br><span class="line">npm install</span><br></pre></td></tr></tbody></table></figure>
 <a id="more"></a>
-<h2 id="资源地址"><a href="#资源地址" class="headerlink" title="资源地址"></a>资源地址</h2><ul>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW5yZXN0eS9oZWFkZXJzLW1vcmUtbmdpbngtbW9kdWxl" title="https://github.com/openresty/headers-more-nginx-module"><i class="fa fa-link"></i>headers-more-nginx-module-0.33github地址<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW5yZXN0eS9oZWFkZXJzLW1vcmUtbmdpbngtbW9kdWxlI2NvbXBhdGliaWxpdHk=" title="https://github.com/openresty/headers-more-nginx-module#compatibility"><i class="fa fa-link"></i>查看插件支持的nginx版本github地址<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW5yZXN0eS9oZWFkZXJzLW1vcmUtbmdpbngtbW9kdWxlL3RhZ3M=" title="https://github.com/openresty/headers-more-nginx-module/tags"><i class="fa fa-link"></i>headers-more-nginx-module下载地址<i class="fa fa-external-link"></i></span></li>
-<li><span class="exturl" data-url="aHR0cDovL25naW54Lm9yZy8=" title="http://nginx.org/"><i class="fa fa-link"></i>nginx下载地址<i class="fa fa-external-link"></i></span></li>
+<h3 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hexo g</td>
+<td>编译(hexo generate)</td>
+</tr>
+<tr>
+<td>hexo s</td>
+<td>启动hexo本地服务(hexo server)</td>
+</tr>
+<tr>
+<td>hexo d</td>
+<td>上传(hexo deploy),前提是配置好git弟子</td>
+</tr>
+<tr>
+<td>hexo n ‘page’</td>
+<td>新建页面(hexo new ‘’或者hexo new page ‘’)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="github项目准备"><a href="#github项目准备" class="headerlink" title="github项目准备"></a>github项目准备</h3><ul>
+<li><p>新建项目,项目名称<code>[github name].github.io</code></p>
+<blockquote>
+<p>没有github的先去注册<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29t" title="https://github.com">github<i class="fa fa-external-link"></i></span>账号</p>
+</blockquote>
+</li>
+<li><p>创建完成后，复制该项目的git地址</p>
+<blockquote>
+<p><span class="exturl" data-url="bWFpbHRvOmdpdEBnaXRodWIuY29t" title="mailto:git@github.com">git@github.com<i class="fa fa-external-link"></i></span>:it-daily/it-daily.github.io.git</p>
+</blockquote>
+</li>
+<li><p>将git地址复制到hexo的_config.yml</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: git@github.com:it-daily/it-daily.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>生成SSH key</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 检查当前用户.ssh下是否存在id_rsa和id_rsa.pub这两个文件,不存在生成</span></span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"youremail@example.com"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 一路回车，在用户主目录里找到.ssh目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>登陆 GitHub设置ssh key</p>
+<blockquote>
+<p>打开“Account settings”，“SSH Keys”页面，点“Add SSH Key”，填上任意 Title，在 Key 文本框里粘贴id_rsa.pub文件的内容</p>
+</blockquote>
+</li>
+<li><p>生成博客的静态文件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>安装hexo git插件</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>上传静态文件到GitHub</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></tbody></table></figure>
+</li>
 </ul>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 举例目录/app/tools</span></span><br><span class="line">cd /app/tools/</span><br><span class="line"><span class="meta">#</span><span class="bash">下载插件</span></span><br><span class="line">wget https://github.com/openresty/headers-more-nginx-module/archive/v0.33.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash">解压</span></span><br><span class="line">tar -zxvf v0.33.tar.gz</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="加载模块"><a href="#加载模块" class="headerlink" title="加载模块"></a>加载模块</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看安装参数命令(取出：configure arguments:)</span></span><br><span class="line">/app/nginx/sbin/nginx -V</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在nginx资源目录编译</span></span><br><span class="line">cd /app/nginx-1.12.2/</span><br><span class="line"><span class="meta">#</span><span class="bash"> 将上面取出的configure arguments后面追加 --add-module=/app/tools/headers-more-nginx-module-0.33</span></span><br><span class="line">./configure --prefix=/app/nginx112 --add-module=/app/tools/headers-more-nginx-module-0.33</span><br><span class="line"><span class="meta">#</span><span class="bash"> 编辑，切记没有make install</span></span><br><span class="line">make</span><br><span class="line"><span class="meta">#</span><span class="bash"> 备份</span></span><br><span class="line">cp /app/nginx112/sbin/nginx /app/nginx112/sbin/nginx.bak </span><br><span class="line"><span class="meta">#</span><span class="bash"> 覆盖(覆盖提示输入y)</span></span><br><span class="line">cp -f /app/nginx-1.12.2/objs/nginx /app/nginx112/sbin/nginx</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /app/nginx112/conf/nginx.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加配置(在http模块)</span></span><br><span class="line">more_clear_headers 'Server';</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>上面配置只是将http响应头中的Server:nginx/1.12.2清楚，详细使用方案可阅读<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL29wZW5yZXN0eS9oZWFkZXJzLW1vcmUtbmdpbngtbW9kdWxl" title="https://github.com/openresty/headers-more-nginx-module">参考文档<i class="fa fa-external-link"></i></span>,<br>支持添加·修改·清除响应头的操作，</p>
-</blockquote>
-<h2 id="重启nginx"><a href="#重启nginx" class="headerlink" title="重启nginx"></a>重启nginx</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/app/nginx112/sbin/nginx -s stop</span><br><span class="line">/app/nginx112/sbin/nginx</span><br></pre></td></tr></tbody></table></figure>
-<blockquote>
-<p>直接使用reload可能会无效</p>
-</blockquote>
-<hr>
+<h3 id="博客maupassant主题"><a href="#博客maupassant主题" class="headerlink" title="博客maupassant主题"></a>博客maupassant主题</h3><p>请参照<span class="exturl" data-url="aHR0cHM6Ly93d3cuaGFvbXdlaS5jb20vdGVjaG5vbG9neS9tYXVwYXNzYW50LWhleG8uaHRtbA==" title="https://www.haomwei.com/technology/maupassant-hexo.html">maupassant<i class="fa fa-external-link"></i></span></p>
+
       
     </div>
 
@@ -571,9 +609,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/blog/" rel="tag"># blog</a>
           
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/github/" rel="tag"># github</a>
           
         </div>
       
@@ -598,18 +638,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/dceaf414.html" rel="next" title="mysql三种安装方式之-rpm方式安装">
-                <i class="fa fa-chevron-left"></i> mysql三种安装方式之-rpm方式安装
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/a95699cc.html" rel="prev" title="mysql gtid读写分离主从同步生产环境实战">
-                mysql gtid读写分离主从同步生产环境实战 <i class="fa fa-chevron-right"></i>
+              <a href="/post/dceaf414.html" rel="prev" title="mysql三种安装方式之-rpm方式安装">
+                mysql三种安装方式之-rpm方式安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -796,7 +832,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求场景"><span class="nav-number">1.</span> <span class="nav-text">需求场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">2.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源地址"><span class="nav-number">3.</span> <span class="nav-text">资源地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载"><span class="nav-number">4.</span> <span class="nav-text">下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载模块"><span class="nav-number">5.</span> <span class="nav-text">加载模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置"><span class="nav-number">6.</span> <span class="nav-text">修改配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启nginx"><span class="nav-number">7.</span> <span class="nav-text">重启nginx</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前期准备工作"><span class="nav-number">1.</span> <span class="nav-text">前期准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地初始化hexo"><span class="nav-number">2.</span> <span class="nav-text">本地初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo常用命令"><span class="nav-number">3.</span> <span class="nav-text">hexo常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#github项目准备"><span class="nav-number">4.</span> <span class="nav-text">github项目准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客maupassant主题"><span class="nav-number">5.</span> <span class="nav-text">博客maupassant主题</span></a></li></ol></div>
             
 
           </div>

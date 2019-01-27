@@ -81,25 +81,25 @@
 
 
 </head><body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
-  <meta name="description" content="mysql rpm方式安装">
-<meta name="keywords" content="linux, mysql">
+  <meta name="description" content="mysql gtid读写分离主从同步生产环境实战">
+<meta name="keywords" content="linux, mysql, 主从同步">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mysql三种安装方式之-rpm方式安装">
-<meta property="og:url" content="http://yoursite.com/archives/dceaf414.html">
+<meta property="og:title" content="mysql gtid读写分离主从同步生产环境实战">
+<meta property="og:url" content="http://yoursite.com/post/a95699cc.html">
 <meta property="og:site_name" content="李杭">
-<meta property="og:description" content="mysql rpm方式安装">
+<meta property="og:description" content="mysql gtid读写分离主从同步生产环境实战">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-26T04:13:16.849Z">
+<meta property="og:updated_time" content="2019-01-26T04:12:22.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mysql三种安装方式之-rpm方式安装">
-<meta name="twitter:description" content="mysql rpm方式安装">
+<meta name="twitter:title" content="mysql gtid读写分离主从同步生产环境实战">
+<meta name="twitter:description" content="mysql gtid读写分离主从同步生产环境实战">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/dceaf414.html">
+  <link rel="canonical" href="http://yoursite.com/post/a95699cc.html">
 
 
 
@@ -109,7 +109,7 @@
   };
 </script>
 
-  <title>mysql三种安装方式之-rpm方式安装 | 李杭</title>
+  <title>mysql gtid读写分离主从同步生产环境实战 | 李杭</title>
   
 
 
@@ -252,7 +252,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -355,7 +355,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/archives/dceaf414.html">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/post/a95699cc.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lihang">
@@ -372,7 +372,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">mysql三种安装方式之-rpm方式安装
+          <h2 class="post-title" itemprop="name headline">mysql gtid读写分离主从同步生产环境实战
 
               
             
@@ -400,7 +400,7 @@
                 
               
 
-              <time title="创建时间：2018-12-28 16:47:00" itemprop="dateCreated datePublished" datetime="2018-12-28T16:47:00+08:00">2018-12-28</time>
+              <time title="创建时间：2019-01-23 18:46:40" itemprop="dateCreated datePublished" datetime="2019-01-23T18:46:40+08:00">2019-01-23</time>
             
 
             
@@ -417,11 +417,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-26 12:13:16" itemprop="dateModified" datetime="2019-01-26T12:13:16+08:00">2019-01-26</time>
+                <time title="修改时间：2019-01-26 12:12:22" itemprop="dateModified" datetime="2019-01-26T12:12:22+08:00">2019-01-26</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -434,8 +452,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
             
-                <a href="/archives/dceaf414.html#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/archives/dceaf414.html" itemprop="commentCount"></span>
+                <a href="/post/a95699cc.html#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/post/a95699cc.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -457,7 +475,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.2k</span>
+                <span title="本文字数">1.7k</span>
               
 
               
@@ -471,13 +489,13 @@
                 
                   <span class="post-meta-item-text">阅读时长 ≈</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
 
           
-            <div class="post-description">mysql rpm方式安装</div>
+            <div class="post-description">mysql gtid读写分离主从同步生产环境实战</div>
           
 
         </div>
@@ -493,24 +511,53 @@
       
 
       
-        <meta name="generator" content="Hexo 3.8.0"><h3 id="查看安装以及卸载"><a href="#查看安装以及卸载" class="headerlink" title="查看安装以及卸载"></a>查看安装以及卸载</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看</span></span><br><span class="line">rpm -qa | grep mysql</span><br><span class="line"><span class="meta">#</span><span class="bash"> 卸载</span></span><br><span class="line">yum -y remove mysql-libs-5.1.66-2.el6_3.x86_64</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="安装包资源地址"><a href="#安装包资源地址" class="headerlink" title="安装包资源地址"></a>安装包资源地址</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kZXYubXlzcWwuY29tL2Rvd25sb2Fkcy9teXNxbC8=" title="https://dev.mysql.com/downloads/mysql/"><i class="fa fa-download"></i>mysql下载地址<i class="fa fa-external-link"></i></span></p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载资源名称</span></span><br><span class="line">mysql-5.7.22-1.el7.x86_64.rpm-bundle.tar</span><br></pre></td></tr></tbody></table></figure>
+        <meta name="generator" content="Hexo 3.8.0"><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>mysql-5.7.19</li>
+<li>Centos7</li>
+<li>master: 192.168.111.64</li>
+<li>slave: 192.168.111.66</li>
+</ul>
+<h2 id="主从配置"><a href="#主从配置" class="headerlink" title="主从配置"></a>主从配置</h2><h3 id="master配置"><a href="#master配置" class="headerlink" title="master配置"></a>master配置</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">## GTID</span><br><span class="line">server_id = 100  # 服务器id，从库最好大于主库,注意要唯一</span><br><span class="line">gtid_mode = on    #开启gtid模式</span><br><span class="line">enforce_gtid_consistency = on    #强制gtid一致性，开启后对特定的create table不被支持</span><br><span class="line">log-bin = mysql-bin    #开启二进制日志</span><br><span class="line">binlog_format = row    #默认为mixed混合模式，更改成row复制，为了数据一致性</span><br><span class="line">log-slave-updates = 1    #从库binlog才会记录主库同步的操作日志</span><br><span class="line">skip_slave_start=1    #跳过slave复制线程</span><br></pre></td></tr></tbody></table></figure>
 <a id="more"></a>
-<h3 id="解压资源"><a href="#解压资源" class="headerlink" title="解压资源"></a>解压资源</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xvf mysql-5.7.22-1.el7.x86_64.rpm-bundle.tar</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="获取rpm包"><a href="#获取rpm包" class="headerlink" title="获取rpm包"></a>获取rpm包</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql-community-common-5.7.19-1.el6.x86_64.rpm</span><br><span class="line">mysql-community-client-5.7.19-1.el6.x86_64.rpm</span><br><span class="line">mysql-community-server-5.7.19-1.el6.x86_64.rpm</span><br><span class="line">mysql-community-libs-5.7.19-1.el6.x86_64.rpm</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 安装顺序</span><br><span class="line"># common --> libs --> clients --> server</span><br><span class="line"># 安装命令</span><br><span class="line">rpm -ivh mysql-community-common-5.7.19-1.el6.x86_64.rpm mysql-community-libs-5.7.19-1.el6.x86_64.rpm mysql-community-client-5.7.19-1.el6.x86_64.rpm mysql-community-server-5.7.19-1.el6.x86_64.rpm</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="slave配置"><a href="#slave配置" class="headerlink" title="slave配置"></a>slave配置</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">## 设置server_id，注意要唯一</span><br><span class="line">server_id=101</span><br><span class="line">log-bin = mysql-bin</span><br><span class="line">binlog_format = row</span><br><span class="line">log-slave-updates = 1</span><br><span class="line">gtid_mode = on</span><br><span class="line">enforce_gtid_consistency = on</span><br><span class="line">skip_slave_start=1</span><br><span class="line"># 从库设置为只读</span><br><span class="line">read_only=on</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="重启数据库"><a href="#重启数据库" class="headerlink" title="重启数据库"></a>重启数据库</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld restart</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 用户从库同步</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">SELECT</span>,RELOAD,<span class="keyword">SHOW</span> <span class="keyword">DATABASES</span>,<span class="keyword">LOCK</span> <span class="keyword">TABLES</span>,<span class="keyword">EVENT</span>,<span class="keyword">REPLICATION</span> <span class="keyword">CLIENT</span>  <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'repl_user'</span>@<span class="string">'192.168.111.64'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">'123456'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建只读用户，用户从库读取数据</span></span><br><span class="line"><span class="keyword">GRANT</span> <span class="keyword">Select</span> <span class="keyword">ON</span> *.* <span class="keyword">TO</span> <span class="string">'reader'</span>@<span class="string">'192.168.111.%'</span>  <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> <span class="string">"123456"</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在192.169.111.66上操作</span></span><br><span class="line">nohup mysqldump --single-transaction --master-data=2 --triggers --routines --all-databases --events -h192.168.111.64 -u'root' -p'password' > /home/backup.sql &</span><br></pre></td></tr></tbody></table></figure>
 <blockquote>
-<p>1.centos7需要先卸载mariadb，卸载命令<code>rpm -qa | grep mariadb</code></p>
+<p>因为数据量较大(导出大概30G)，使用<code>nohup [commend] &</code>  使用后台导出，防止导出时间过长连接断开，可以使用<code>jobs -l</code>命令查看</p>
 </blockquote>
 <blockquote>
-<p>可能需要依赖包<code>libaio</code><br>安装命令<code>yum -y install libaio</code></p>
+<p>数据导出也可以直接在主库服务器上导出，然后通过<code>scp backup.sql 192.168.111.66:/home</code>命令传到从库服务器</p>
 </blockquote>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --user=mysql</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 查看初始密码</span><br><span class="line">cat /var/logs/mysql.log</span><br><span class="line"># 登陆</span><br><span class="line">mysql -uroot -p'123456'</span><br><span class="line"># 修改初始密码</span><br><span class="line">set PASSWORD=PASSWORD('密码');</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="授权远程链接"><a href="#授权远程链接" class="headerlink" title="授权远程链接"></a>授权远程链接</h3><figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 授权192.168.0.1可以远程链接*[所有数据库].*[所有表] 账号：root 密码123456</span></span><br><span class="line"><span class="keyword">grant</span> all <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'root'</span>@<span class="string">'192.168.0.1'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'123456'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">### 授权所有ip</span></span><br><span class="line"><span class="keyword">grant</span> all <span class="keyword">privileges</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'root'</span>@<span class="string">'%'</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">'123456'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">### 以上*.*表示[数据库].[表]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">### 使授权立刻生效</span></span><br><span class="line"><span class="keyword">flush</span> <span class="keyword">privileges</span>;</span><br></pre></td></tr></tbody></table></figure>
-
+<h2 id="从库数据导入"><a href="#从库数据导入" class="headerlink" title="从库数据导入"></a>从库数据导入</h2><h3 id="连接mysql导入"><a href="#连接mysql导入" class="headerlink" title="连接mysql导入"></a>连接mysql导入</h3><ul>
+<li>登陆mysql</li>
+</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 连接到数据库</span></span><br><span class="line">mysql -uroot -p'123456';</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>执行导入sql命令</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /home/backup.sql</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="命令直接导入"><a href="#命令直接导入" class="headerlink" title="命令直接导入"></a>命令直接导入</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup mysql -uroot -p’123456’ < /home/backup.sql &</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>推荐第二种方式，尤其是数据量较大的情况下</p>
+</blockquote>
+<h2 id="在192-168-111-66上设置主从连接"><a href="#在192-168-111-66上设置主从连接" class="headerlink" title="在192.168.111.66上设置主从连接"></a>在192.168.111.66上设置主从连接</h2><ul>
+<li>连接mysql</li>
+</ul>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p'123456'</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>设置</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 设置</span></span><br><span class="line"><span class="keyword">CHANGE</span> <span class="keyword">MASTER</span> <span class="keyword">TO</span> MASTER_HOST=<span class="string">'192.168.111.64'</span>, MASTER_PORT=<span class="number">3306</span>,MASTER_USER=<span class="string">'repl_user'</span>,MASTER_PASSWORD=<span class="string">'123456'</span>,MASTER_AUTO_POSITION=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 开启主从</span></span><br><span class="line"><span class="keyword">start</span> <span class="keyword">slave</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看主从状态</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">slave</span> <span class="keyword">status</span> \G;</span><br></pre></td></tr></tbody></table></figure>
+<blockquote>
+<p>常用命令:</p>
+<ul>
+<li>停止同步:<code>stop slave</code></li>
+<li>重置从库状态:<code>reset slave</code></li>
+<li>重置主库状态:<code>reset master</code></li>
+</ul>
+</blockquote>
+<hr>
       
     </div>
 
@@ -545,11 +592,7 @@
           
             <a href="/tags/mysql/" rel="tag"># mysql</a>
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
-            <a href="/tags/centos/" rel="tag"># centos</a>
-          
-            <a href="/tags/rpm/" rel="tag"># rpm</a>
+            <a href="/tags/gtid/" rel="tag"># gtid</a>
           
         </div>
       
@@ -574,8 +617,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/869e96f6.html" rel="next" title="github pages和hexo博客搭建">
-                <i class="fa fa-chevron-left"></i> github pages和hexo博客搭建
+              <a href="/post/15b18a2.html" rel="next" title="nginx添加新模块以及自定义http响应头">
+                <i class="fa fa-chevron-left"></i> nginx添加新模块以及自定义http响应头
               </a>
             
           </div>
@@ -584,8 +627,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/archives/15b18a2.html" rel="prev" title="nginx添加新模块以及自定义http响应头">
-                nginx添加新模块以及自定义http响应头 <i class="fa fa-chevron-right"></i>
+              <a href="/post/4e463d48.html" rel="prev" title="一些特殊用法">
+                一些特殊用法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -772,7 +815,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#查看安装以及卸载"><span class="nav-number">1.</span> <span class="nav-text">查看安装以及卸载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装包资源地址"><span class="nav-number">2.</span> <span class="nav-text">安装包资源地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解压资源"><span class="nav-number">3.</span> <span class="nav-text">解压资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#获取rpm包"><span class="nav-number">4.</span> <span class="nav-text">获取rpm包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">5.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">6.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动"><span class="nav-number">7.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登陆"><span class="nav-number">8.</span> <span class="nav-text">登陆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#授权远程链接"><span class="nav-number">9.</span> <span class="nav-text">授权远程链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主从配置"><span class="nav-number">2.</span> <span class="nav-text">主从配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#master配置"><span class="nav-number">2.1.</span> <span class="nav-text">master配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#slave配置"><span class="nav-number">2.2.</span> <span class="nav-text">slave配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启数据库"><span class="nav-number">3.</span> <span class="nav-text">重启数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">4.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据导出"><span class="nav-number">5.</span> <span class="nav-text">数据导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从库数据导入"><span class="nav-number">6.</span> <span class="nav-text">从库数据导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#连接mysql导入"><span class="nav-number">6.1.</span> <span class="nav-text">连接mysql导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令直接导入"><span class="nav-number">6.2.</span> <span class="nav-text">命令直接导入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在192-168-111-66上设置主从连接"><span class="nav-number">7.</span> <span class="nav-text">在192.168.111.66上设置主从连接</span></a></li></ol></div>
             
 
           </div>
