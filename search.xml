@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>mysql修改存储地址</title>
+      <link href="/post/a3505c8d.html"/>
+      <url>/post/a3505c8d.html</url>
+      
+        <content type="html"><![CDATA[<html><head></head><body><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul><li>mysql版本:mysql-5.7.19-log</li><li>原存储目录: /var/lib/mysql</li><li>目标存储目录: /home/mysqldata</li></ul><h2 id="停止mysql服务"><a href="#停止mysql服务" class="headerlink" title="停止mysql服务"></a>停止mysql服务</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service mysqld stop</span><br></pre></td></tr></tbody></table></figure><h2 id="建立新的存储目录"><a href="#建立新的存储目录" class="headerlink" title="建立新的存储目录"></a>建立新的存储目录</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/mysqldata</span><br></pre></td></tr></tbody></table></figure><a id="more"></a><h2 id="复制数据库到新的存储目录"><a href="#复制数据库到新的存储目录" class="headerlink" title="复制数据库到新的存储目录"></a>复制数据库到新的存储目录</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -av /var/lib/mysql/* /home/mysqldata</span><br></pre></td></tr></tbody></table></figure><h2 id="修改目录权限"><a href="#修改目录权限" class="headerlink" title="修改目录权限"></a>修改目录权限</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 更改用户组/用户为mysql:mysql</span></span><br><span class="line">chown -vR mysql:mysql /home/mysqldata/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 更改访问权限为700</span></span><br><span class="line">chmod -vR 700 /homemysqldata/</span><br></pre></td></tr></tbody></table></figure><h2 id="修改数据库配置"><a href="#修改数据库配置" class="headerlink" title="修改数据库配置"></a>修改数据库配置</h2><figure class="highlight plain"><figcaption><span>/etc/my.conf</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># vim /etc/my.conf</span><br><span class="line"></span><br><span class="line"># 修改为</span><br><span class="line">datadir=/home/mysqldata</span><br><span class="line">socket=/home/mysqldata/mysql.sock</span><br></pre></td></tr></tbody></table></figure><h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 有时会出现文件权限问题 errorcode：13</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> mysql默认安装目录</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls -ldZ /var/lib/mysql</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 结果</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> drwxr-x---. mysql mysql system_u:object_r:mysqld_db_t:s0 /var/lib/mysql</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看调整后的目录权限</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls -ldZ /home/mysqldata/</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 结果</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> drwxr-x---. mysql mysql unconfined_u:object_r:unlabeled_t:s0 /home/mysqldata/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 修改</span></span><br><span class="line">chcon -Rv -u system_u -t mysqld_db_t /home/mysqldata/</span><br></pre></td></tr></tbody></table></figure><blockquote><p>如果上面修改权限后还是因为权限问题无法启动,下面二种方式(推荐第二种)执行后再</p></blockquote><blockquote><p>1.可以先关闭selinux<br><code>vim /etc/selinux/config</code>,将<br><code>SELINUX=permissive</code> -> <code>SELINUX=disabled</code>，需要重启机器<br>2.也可以使用<code>setenforce 0 </code>临时关闭后再执行修改目录权限命令</p></blockquote><hr></body></html>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+            <tag> linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>一些特殊用法</title>
       <link href="/post/4e463d48.html"/>
       <url>/post/4e463d48.html</url>
@@ -87,11 +108,11 @@
       
         <tags>
             
+            <tag> mysql </tag>
+            
             <tag> linux </tag>
             
             <tag> centos </tag>
-            
-            <tag> mysql </tag>
             
             <tag> rpm </tag>
             
