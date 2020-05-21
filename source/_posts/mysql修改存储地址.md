@@ -49,7 +49,7 @@ cp -av /var/lib/mysql/* /home/mysqldata
 chown -vR mysql:mysql /home/mysqldata/
 
 # 更改访问权限为700
-chmod -vR 700 /homemysqldata/
+chmod -vR 700 /home/mysqldata/
 ```
 
 ## 修改数据库配置

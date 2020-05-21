@@ -59,6 +59,34 @@ rpm -ivh mysql-community-common-5.7.19-1.el6.x86_64.rpm mysql-community-libs-5.7
 > 可能需要依赖包<code>libaio</code>
 > 安装命令<code>yum -y install libaio</code>
 
+### 修改数据库初始化路径
+
+先检查linux配置：<code>vim /etc/selinux/config</code>,将
+<code>SELINUX=permissive</code>改成<code>SELINUX=disabled</code>
+
++ 配置`[mysqld]`
+```  shell
+# 创建目录
+mkdir -p /home/data/
+
+# 修改数据库配置
+# vim /etc/my.conf
+
+# 修改为
+datadir=/home/data
+socket=/home/data/mysql.sock
+````
+
++ 配置`[client]`
+
+```
+[client]
+socket=/home/data/mysql.sock
+
+```
+> `[mysqld]`是数据库服务的配置项，`[client]`是数据库客户端链接的配置项，初始化目录变动后，不配置该项本地命令连接时会出现sock文件找不到的错误
+
+
 ### 初始化
 
 ``` shell
@@ -72,7 +100,7 @@ service mysqld start
 ### 登陆
 ```
 # 查看初始密码
-cat /var/logs/mysql.log
+cat /var/logs/mysql.log | grep 'temporary password'
 # 登陆
 mysql -uroot -p'123456'
 # 修改初始密码
