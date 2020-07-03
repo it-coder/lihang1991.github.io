@@ -79,5 +79,14 @@ ffmpeg -i 1.mp3 -i 2.mp3 -i 3.mp3 -i 4.mp3 -i 5.mp3 -filter_complex amix=inputs=
 ffprobe -v quiet -print_format json -show_format -show_streams 3.mp3
 ```
 
+#### 使用`ffmpeg --version`报错
+
+错误如下：
+```
+ffmpeg: error while loading shared libraries: libmp3lame.so.0: cannot open shared object file: No such file or directory
+
+```
+
+编缉`/etc/ld.so.conf`，新建一行追加：`/usr/local/lib`；保存后执行命令重加载配置文件：`ldconfig`
 
 <hr />

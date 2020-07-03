@@ -47,6 +47,7 @@ image:
 | `c` | 字符设备文件 |
 | `b` | 块设备文件 |
 
+<!-- more -->
 #### 查看文件权限
 
 命令：`ls -l`,返回结果`drwxrwxrwx 7 lih root`

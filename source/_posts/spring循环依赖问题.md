@@ -21,7 +21,7 @@ image:
 您需要做的是启用Bean Overriding。从Spring2.1开始，此功能默认为禁用。
 您将得到一个异常，因为已经定义了一个具有相同名称的bean
 新增配置
-``` yaml
+```yml
 spring:
    main:
      allow-bean-definition-overriding: true
